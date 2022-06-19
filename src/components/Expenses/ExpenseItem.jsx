@@ -6,11 +6,11 @@ import Card from "../UI/Card";
 function ExpenseItem(props) {
   const { title, price, date } = props;
   
-  const [firstTitle, setValue]=useState(title)
+  const [firstTitle, setTitle]=useState(title)
 
 
   const clickHandler=()=>{
-setValue("hola")
+setTitle("hello")
   }
 
   return (
