@@ -4,14 +4,15 @@ import "./NewExpense.css"
 
 const NewExpense=(props)=>{
     const {onExpenseData}=props;
-console.log(onExpenseData)
+// console.log(onExpenseData)
+
 const expenseDataHandler=(enteredExpenseData)=>{
 const expenseData={
     ...enteredExpenseData,
     id:Math.random().toString()
 };
 
-console.log(expenseData)
+// console.log(expenseData)
 onExpenseData(expenseData)
 }    
 

@@ -14,7 +14,7 @@ const [enteredDate,setEnteredDate]=useState("")
 // })
 const titleChangeHandler=(e)=>{
 setEnteredTitle(e.target.value)
-console.log(enteredTitle)
+// console.log(enteredTitle)
 
 // setserInput((prevState)=>{
 //     return{...prevState, enteredTitle:e.target.value}
@@ -22,11 +22,11 @@ console.log(enteredTitle)
 }
 const priceChangeHandler=(e)=>{
 setEnteredPrice(e.target.value)
-console.log(enteredPrice)
+// console.log(enteredPrice)
 }
 const dateChangeHandler=(e)=>{
 setEnteredDate(e.target.value)
-console.log(enteredDate)
+// console.log(enteredDate)
 
 }
 
@@ -44,8 +44,8 @@ onSaveExpenseData(ExpenseData);
 setEnteredTitle("")
 setEnteredPrice("")
 setEnteredDate("");
-console.log(ExpenseData)
-console.log(ExpenseData)
+//  
+// console.log(ExpenseData)
 
 };
 
