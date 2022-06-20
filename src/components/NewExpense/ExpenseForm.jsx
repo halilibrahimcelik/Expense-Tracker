@@ -36,7 +36,7 @@ const submitHandler=(e)=>{
 const ExpenseData={
     title:enteredTitle,
     price:enteredPrice,
-    date: new Date(enteredPrice)
+    date: new Date(enteredDate)
 };
 
 onSaveExpenseData(ExpenseData);

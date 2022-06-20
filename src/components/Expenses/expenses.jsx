@@ -5,7 +5,7 @@ import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem"
 import "./Expenses.css"
 function Expenses(props){
-const {title,date,price}=props;
+const {items}=props;
 
 const[filteredYear,selectedYear]=useState("2020");
 //!filteredYear is our default value
@@ -21,7 +21,14 @@ const selectedYearHandler=(enteredYear)=>{
         <div>
             <Card className="expenses">
             <ExpenseFilter selected={filteredYear} onSelectedYear={selectedYearHandler} />
-                <ExpenseItem   title={title[0]}
+              
+              {items.map( expense=> <ExpenseItem
+              title={expense.title}
+              price={expense.price}
+              date={expense.date}
+              
+              />)}
+                {/* /* <ExpenseItem   title={title[0]}
             price={price[0]}
             date={date[0]}
                   />
@@ -39,7 +46,7 @@ const selectedYearHandler=(enteredYear)=>{
                 title={title[3]}
                 price={price[3]}
                 date={date[3]}
-                      />
+                      /> */}
             </Card>
         </div>
     )
