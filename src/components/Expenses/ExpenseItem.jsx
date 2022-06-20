@@ -7,7 +7,7 @@ function ExpenseItem(props) {
   const { title, price, date } = props;
   
   const [firstTitle, setTitle]=useState(title);
-  console.log("expenseItem evaluated");
+  // console.log("expenseItem evaluated");
 
 
 
