@@ -2,6 +2,7 @@ import Expenses from "./components/Expenses/expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
+  let newArr = [];
   const expenses = [
     {
       id: "e1",
@@ -24,8 +25,12 @@ function App() {
     },
   ];
 
-  // console.log(expenses.map((expense) => expense.title));
-
+  const addExpenseHandler = (newExpenseData) => {
+    const newExpense = [newExpenseData, ...expenses];
+    console.log(newExpense);
+    newArr = [...newExpense];
+  };
+  console.log(newArr);
   /*
   *This is old way of writing JSX code
   return React.createElement("div", {}, 
@@ -36,7 +41,7 @@ function App() {
   return (
     <div>
       <h2>Expense-Tracker</h2>
-      <NewExpense />
+      <NewExpense onExpenseData={addExpenseHandler} />
       <Expenses
         title={expenses.map((expense) => expense.title)}
         price={expenses.map((expense) => expense.price)}
