@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -28,6 +28,21 @@ const INITIAL_EXPENSES = [
 
 function App() {
   const [initialExpenses, setNewExpenses] = useState(INITIAL_EXPENSES);
+  console.log(initialExpenses);
+
+  //!LOCALSTORAGE
+  useEffect(() => {
+    const localData = localStorage.getItem("Expenses");
+    if (localData) {
+      setNewExpenses(JSON.parse(localData));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("Expenses", JSON.stringify(initialExpenses));
+  }, [initialExpenses]);
+
+  // console.log(JSON.parse(localData).map((data) => new Date(data.date)));
   console.log(initialExpenses);
   const addExpenseHandler = (newExpenseData) => {
     setNewExpenses((prevExpenses) => {
