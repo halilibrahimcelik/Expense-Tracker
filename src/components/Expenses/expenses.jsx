@@ -4,6 +4,7 @@ import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 import Card from "../UI/Card";
 import Warning from '../warning/Warning';
 import ExpenseItem from "./ExpenseItem"
+import ExpensesChart from './ExpensesChart';
 import "./Expenses.css"
 function Expenses(props){
 const {items}=props;
@@ -35,6 +36,7 @@ const selectedYearHandler=(enteredYear)=>{
         <div>
             <Card className="expenses">
                 <ExpenseFilter selected={filteredYear} onSelectedYear={selectedYearHandler} />
+                <ExpensesChart expenses={filteredArray}></ExpensesChart>
 
               {(filteredYear !=="All" &&filteredArray.length===0  )?<Warning year={filteredYear}/>:null}
 

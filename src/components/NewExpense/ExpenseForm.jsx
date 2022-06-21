@@ -52,7 +52,7 @@ const submitHandler=(e)=>{
         }
 const ExpenseData={
     title:enteredTitle,
-    price:enteredPrice,
+    price:+enteredPrice,
     date: new Date(enteredDate)
 };
 

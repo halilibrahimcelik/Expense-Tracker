@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import AddExpenseBtn from './AddNewExpense';
+import AddExpenseBtn from './AddNewExpenseBtn';
 import ExpenseForm from './ExpenseForm'
 import "./NewExpense.css"
 
@@ -12,23 +12,23 @@ const expenseData={
     ...enteredExpenseData,
     id:Math.random().toString()
 };
-setValue(false);
+setVisibility(false);
 onExpenseData(expenseData)
 }    
 
-//!
-const [initialValue,setValue]=useState(false);
+//!setting clickable logic
+const [isSeen,setVisibility]=useState(false);
 
 const AddNewExpenseBtnHandler=()=>{
-   setValue(true)
+   setVisibility(true)
     console.log("clicked")
 }
 const cancelHandler=()=>{
-    setValue(false);
+    setVisibility(false);
 }
 
     return <div className='new-expense'>
- {(!initialValue)?<AddExpenseBtn onAddExpense={AddNewExpenseBtnHandler} />:<ExpenseForm onCancel={cancelHandler} onSaveExpenseData={expenseDataHandler}/>}
+ {(!isSeen)?<AddExpenseBtn onAddExpense={AddNewExpenseBtnHandler} />:<ExpenseForm onCancel={cancelHandler} onSaveExpenseData={expenseDataHandler}/>}
 
     </div>
 }
