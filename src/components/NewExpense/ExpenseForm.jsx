@@ -73,7 +73,8 @@ setEnteredDate("");
 
     </div>
     <div className='new-expense__actions'>
-        <button type='submit'>Add Submit</button>
+        <button type="click">Cancel</button>
+        <button type='submit'>Add Expense</button>
     </div>
 
     </form>)

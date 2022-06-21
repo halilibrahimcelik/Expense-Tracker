@@ -1,4 +1,5 @@
 import React from 'react'
+import AddExpenseBtn from './AddNewExpense';
 import ExpenseForm from './ExpenseForm'
 import "./NewExpense.css"
 
@@ -12,12 +13,18 @@ const expenseData={
     id:Math.random().toString()
 };
 
-// console.log(expenseData)
 onExpenseData(expenseData)
 }    
 
+
+let isClicked=false;
+const AddNewExpenseHandler=()=>{
+    isClicked=true;
+    console.log("clicked")
+}
     return <div className='new-expense'>
- <ExpenseForm onSaveExpenseData={expenseDataHandler}/>
+ {(!isClicked)?<AddExpenseBtn onAddExpense={AddNewExpenseHandler} />:<ExpenseForm onSaveExpenseData={expenseDataHandler}/>}
+  {console.log(isClicked)}
     </div>
 }
 

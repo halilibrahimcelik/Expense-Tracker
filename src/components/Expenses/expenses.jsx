@@ -12,7 +12,7 @@ const {items}=props;
 const[filteredYear,selectedYear]=useState("2020");
 //!filteredYear is our default value
 
-let newArr=items.filter(expense=>   {
+let filteredArray=items.filter(expense=>   {
     if( expense.date.getFullYear().toString()==="all"){
    
         return "items"
@@ -36,34 +36,16 @@ const selectedYearHandler=(enteredYear)=>{
             <Card className="expenses">
                 <ExpenseFilter selected={filteredYear} onSelectedYear={selectedYearHandler} />
 
-              {(filteredYear !=="All" &&newArr.length===0  )?<Warning year={filteredYear}/>:null}
+              {(filteredYear !=="All" &&filteredArray.length===0  )?<Warning year={filteredYear}/>:null}
 
-              {((filteredYear==="All")?items:newArr).map( expense=> <ExpenseItem
+              {((filteredYear==="All")?items:filteredArray).map( expense=> <ExpenseItem
               key={expense.id}
               title={expense.title}
               price={expense.price}
               date={expense.date}
               
               />)}
-                {/* /* <ExpenseItem   title={title[0]}
-            price={price[0]}
-            date={date[0]}
-                  />
-                      <ExpenseItem
-                title={title[1]}
-                price={price[1]}
-                date={date[1]}
-              />
-                      <ExpenseItem
-                title={title[2]}
-                price={price[2]}
-                date={date[2]}
-                     />
-                      <ExpenseItem
-                title={title[3]}
-                price={price[3]}
-                date={date[3]}
-                      /> */}
+      
             </Card>
         </div>
     )

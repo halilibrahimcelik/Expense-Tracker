@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import "./App.css";
 
 const INITIAL_EXPENSES = [
   {
@@ -43,7 +44,7 @@ function App() {
    */
   return (
     <div>
-      <h2>Expense-Tracker</h2>
+      <h2 className="header">Expense-Tracker</h2>
       <NewExpense onExpenseData={addExpenseHandler} />
       <Expenses
         // title={expenses.map((expense) => expense.title)}
