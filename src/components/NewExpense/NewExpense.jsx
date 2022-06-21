@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import AddExpenseBtn from './AddNewExpense';
 import ExpenseForm from './ExpenseForm'
 import "./NewExpense.css"
@@ -12,19 +12,24 @@ const expenseData={
     ...enteredExpenseData,
     id:Math.random().toString()
 };
-
+setValue(false);
 onExpenseData(expenseData)
 }    
 
+//!
+const [initialValue,setValue]=useState(false);
 
-let isClicked=false;
-const AddNewExpenseHandler=()=>{
-    isClicked=true;
+const AddNewExpenseBtnHandler=()=>{
+   setValue(true)
     console.log("clicked")
 }
+const cancelHandler=()=>{
+    setValue(false);
+}
+
     return <div className='new-expense'>
- {(!isClicked)?<AddExpenseBtn onAddExpense={AddNewExpenseHandler} />:<ExpenseForm onSaveExpenseData={expenseDataHandler}/>}
-  {console.log(isClicked)}
+ {(!initialValue)?<AddExpenseBtn onAddExpense={AddNewExpenseBtnHandler} />:<ExpenseForm onCancel={cancelHandler} onSaveExpenseData={expenseDataHandler}/>}
+
     </div>
 }
 
