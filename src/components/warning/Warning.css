@@ -1,0 +1,15 @@
+.warning{
+ 
+    width: 100%;
+
+}
+
+.warning h2{
+    text-align: center;
+    font-weight: 800;
+    color:rgb(75, 73, 71)
+}
+.warning strong{
+    font-size: 2rem;
+    color:red
+}
