@@ -1,7 +1,7 @@
 import "./ExpenseDate.css"
 function ExpenseDate(props){
     const {dateSchedule}=props
-    console.log(dateSchedule)
+
     const month=new Date(dateSchedule).toLocaleString('en-GB', { month: 'long' })
     const day=new Date(dateSchedule).toLocaleString('en-GB', { day: '2-digit' })
     const year=new Date(dateSchedule).getFullYear();

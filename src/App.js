@@ -28,7 +28,6 @@ const INITIAL_EXPENSES = [
 
 function App() {
   const [initialExpenses, setNewExpenses] = useState(INITIAL_EXPENSES);
-  console.log(initialExpenses);
 
   //!LOCALSTORAGE
   useEffect(() => {
@@ -43,7 +42,7 @@ function App() {
   }, [initialExpenses]);
 
   // console.log(JSON.parse(localData).map((data) => new Date(data.date)));
-  console.log(initialExpenses);
+
   const addExpenseHandler = (newExpenseData) => {
     setNewExpenses((prevExpenses) => {
       return [newExpenseData, ...prevExpenses];
