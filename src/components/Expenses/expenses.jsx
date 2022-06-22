@@ -10,16 +10,18 @@ function Expenses(props){
 const {items}=props;
 
 
-const[filteredYear,selectedYear]=useState("2020");
+const[filteredYear,selectedYear]=useState("All");
 //!filteredYear is our default value
 
 let filteredArray=items.filter(expense=>   {
-    if( expense.date.getFullYear().toString()==="all"){
+    let setDate=expense.date;
+
+    if( new Date(setDate).getFullYear().toString()==="all"){
    
         return "items"
     }else{
 
-     return   expense.date.getFullYear().toString() ===filteredYear;
+     return  new Date(setDate).getFullYear().toString() ===filteredYear;
     }
 
 })
@@ -36,8 +38,9 @@ const selectedYearHandler=(enteredYear)=>{
         <div>
             <Card className="expenses">
                 <ExpenseFilter selected={filteredYear} onSelectedYear={selectedYearHandler} />
-                <ExpensesChart expenses={filteredArray}></ExpensesChart>
 
+
+                {((filteredYear==="All")? <ExpensesChart expenses={items} />:<ExpensesChart expenses={filteredArray} />)}
               {(filteredYear !=="All" &&filteredArray.length===0  )?<Warning year={filteredYear}/>:null}
 
               {((filteredYear==="All")?items:filteredArray).map( expense=> <ExpenseItem

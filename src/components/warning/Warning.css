@@ -1,7 +1,9 @@
 .warning{
  
     width: 100%;
-    transition: all 0.4s ease;
+    transition: all 1s ease;
+    opacity: 1;
+    padding: 1rem;
 
 }
 
@@ -10,14 +12,14 @@
     font-weight: 800;
     color:rgb(75, 73, 71);
     transition: all 1s ease;
-    opacity: 1;
 }
 .warning strong{
     font-size: 2rem;
     color:red
 }
-.warning h2:hover{
-    transform:  translateX(90rem) rotateZ(10deg);
+.warning:hover{
+    transform:   translateX(10rem);
     opacity: 0;
+
   
 }
